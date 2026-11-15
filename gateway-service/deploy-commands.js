@@ -49,14 +49,18 @@ const rest = new REST({ version: "10" }).setToken(TOKEN);
         console.log(`🚀 ${commands.length} komut yükleniyor...`);
 
         await rest.put(
-            Routes.applicationCommands(CLIENT_ID),
+            Routes.applicationGuildCommands(
+                CLIENT_ID,
+                "1570454487770992660"
+            ),
             {
                 body: commands,
             }
         );
 
-        console.log("✅ Komutlar başarıyla yüklendi.");
+        console.log("✅ Komutlar yeni sunucuya yüklendi.");
     } catch (err) {
         console.error(err);
+        process.exitCode = 1;
     }
 })();
