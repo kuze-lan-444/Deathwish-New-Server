@@ -4,7 +4,7 @@
   "description": "Deathwish Game Bot - Discord Gateway",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+  "start": "node deploy-commands.js && node index.js",
     "deploy-commands": "node deploy-commands.js"
   },
   "engines": {
